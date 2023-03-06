@@ -1,6 +1,7 @@
 package it.polito.tdp.libretto.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Voto {
 	
@@ -38,5 +39,27 @@ public class Voto {
 	public void setDataEsame(LocalDate dataEsame) {
 		this.dataEsame = dataEsame;
 	}
+
+	@Override
+	public String toString() {
+		return corso + " (" + punti + " pt) il " + dataEsame;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(corso, dataEsame, punti);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Voto v = (Voto)obj;
+		if(this.corso.compareTo(v.getCorso()) == 0 && this.punti == v.getPunti()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 
 }
