@@ -17,7 +17,17 @@ public class TestLibretto {
 		Voto a1bis = new Voto("Analisi I", 29, LocalDate.of(2021, 2, 15));
 		Voto a1ter = new Voto("Analisi I", 30, LocalDate.of(2021, 2, 15));
 		System.out.println(v);
-		System.out.println(lib.esisteVoto(v));
+		if(lib.esisteVoto(v) == true) {
+			System.out.println("Il voto esiste già");
+		}
+		else {
+			System.out.println("Voto non ancora inserito");
+		}
+		
+		Voto votoConflitto = new Voto("Analisi I", 22, LocalDate.of(2021, 2, 15));
+		
+		System.out.println("C'è conflitto tra due voti? " + lib.conflittoConAltroVoto(votoConflitto));
+		
 
 	}
 

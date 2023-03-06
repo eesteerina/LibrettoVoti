@@ -55,5 +55,16 @@ public class Libretto {
 		return false;
 	}
 	
+	public boolean conflittoConAltroVoto(Voto v) {
+		for(Voto vv : this.voti) {
+			if(vv.getCorso().compareTo(v.getCorso()) == 0) {
+				if(vv.getPunti() != v.getPunti()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 
 }
